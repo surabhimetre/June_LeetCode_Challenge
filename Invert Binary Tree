@@ -45,3 +45,32 @@ class Solution(object):
         if(ptr.right!=None):
             self.invertTree(ptr.right)
         return root
+
+
+#Java
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if(root==null)
+        {
+            return null;
+        }
+        TreeNode ptr;
+        ptr=root;
+        TreeNode temp;
+        if(ptr.left!=null || ptr.right!=null)
+        {
+            temp=ptr.left;
+            ptr.left=ptr.right;
+            ptr.right=temp;
+        }
+        if(ptr.left!=null)
+        {
+            invertTree(ptr.left);
+        }
+        if(ptr.right!=null)
+        {
+            invertTree(ptr.right);
+        }
+        return root;
+    }
+}
