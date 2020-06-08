@@ -22,11 +22,10 @@ class Solution(object):
         :rtype: bool
         """
         res=1
-        flag=0
-        while(flag==0):
+        while(True):
             if(res==n):
                 return True
             res=res*2
             if(res>n):
-                flag=1
+                return False
         return False
